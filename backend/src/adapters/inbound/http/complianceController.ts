@@ -31,7 +31,7 @@ router.get('/adjusted-cb', async (req, res) => {
   if (!routes || routes.length === 0) return res.status(404).json({ error: 'Route not found' });
   const cbObj = await computeCBForRoute(routes[0], complianceRepo);
   // get banked amount
-  const { PrismaBankingRepository } = await import('../outbound/postgres/bankingRepository');
+  const { PrismaBankingRepository } = await import('../../outbound/postgres/bankingRepository');
   const bankingRepo = new PrismaBankingRepository();
   const banked = await bankingRepo.getBanked(String(shipId), Number(year));
   // adjusted: cb + banked (banked is positive surplus that can offset negative cb)
