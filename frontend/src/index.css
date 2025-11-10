@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+/* UI tweaks */
+.feu-table th {
+  @apply bg-gray-100 text-left text-sm px-3 py-2 font-medium;
+}
+
+.feu-table td {
+  @apply border-t px-3 py-2 text-sm;
+}
+
+.feu-table tbody tr:nth-child(even) td {
+  @apply bg-gray-50;
+}
+
+.app-header {
+  @apply flex items-center justify-between mb-4 gap-4
+}
+
+.app-title {
+  @apply text-2xl font-extrabold
+}
+
+.app-subtitle {
+  @apply text-sm text-gray-600
+}
+
+.tabs {
+  @apply flex gap-2
+}
+
+.tab-btn {
+  @apply px-4 py-2 rounded-full text-sm border hover: shadow-sm
+}
+
+.tab-btn-active {
+  @apply bg-blue-600 text-white shadow
+}
